@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+h1, h2 {
+  color: #444;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-top: 100px; /* Προσθήκη padding για το σταθερό μενού */
+}
+
+/* Προσαρμογή padding για μικρότερες οθόνες */
+@media (max-width: 600px) {
+  .container {
+    padding-top: 80px; /* Λιγότερο padding για mobile */
+  }
+}
+
+input, textarea, button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width:auto;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.map-container {
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.map-container {
+  height: 500px;
+  width: 100%;
+  margin-top: 20px;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+}
+
+

@@ -1,0 +1,556 @@
+
+.account-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 80px 0 20px 0;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  overflow-y: auto;
+  z-index: 1;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 0vh;
+  width: 100vw;
+}
+
+
+.account-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="60" r="0.5" fill="rgba(255,255,255,0.1)"/><circle cx="90" cy="40" r="0.5" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.account-wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.account-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  width: calc(100% - 40px);
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+  animation: slideInUp 0.8s ease-out;
+  overflow: hidden;
+  margin: 20px;
+  margin-top: 0;
+}
+
+.account-header {
+  text-align: center;
+  padding: 40px 30px 20px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  position: relative;
+}
+
+.account-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="header-grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23header-grain)"/></svg>');
+  opacity: 0.3;
+}
+
+.account-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.account-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+
+.message {
+  margin: 20px 30px 0;
+  padding: 15px 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.message.success {
+  background: linear-gradient(45deg, #27ae60, #2ecc71);
+  color: white;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.message.error {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  color: white;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+
+.account-tabs {
+  display: flex;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.tab {
+  flex: 1;
+  padding: 20px;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.tab:hover {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+}
+
+.tab.active {
+  color: #667eea;
+  background: white;
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+}
+
+
+.tab-content {
+  padding: 30px;
+}
+
+
+.profile-section {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 20px;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.user-details h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.user-details p {
+  margin: 0 0 8px 0;
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.member-since {
+  font-size: 0.9rem;
+  color: #95a5a6;
+  font-style: italic;
+}
+
+
+.profile-form,
+.email-form,
+.password-form {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px 18px;
+  border: 2px solid #e8f4fd;
+  border-radius: 12px;
+  font-size: 16px;
+  background: white;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  transform: scale(1.02);
+}
+
+.form-group input::placeholder {
+  color: #95a5a6;
+}
+
+.form-group input:disabled {
+  background: #f8f9fa;
+  color: #6c757d;
+  cursor: not-allowed;
+}
+
+
+.save-button {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(45deg, #667eea, #764ba2);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.save-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.save-button:hover::before {
+  left: 100%;
+}
+
+.save-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.save-button:active {
+  transform: translateY(-1px);
+}
+
+.save-button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+
+.security-section {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.security-info {
+  margin-bottom: 30px;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+  border-radius: 15px;
+  border-left: 4px solid #f39c12;
+}
+
+.security-info h3 {
+  margin: 0 0 10px 0;
+  color: #856404;
+  font-size: 1.3rem;
+}
+
+.security-info p {
+  margin: 0;
+  color: #856404;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+
+.account-actions {
+  padding: 20px 30px 30px;
+  text-align: center;
+  border-top: 1px solid #e9ecef;
+  background: #f8f9fa;
+}
+
+.logout-button {
+  padding: 12px 30px;
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+}
+
+.logout-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+}
+
+.logout-button:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(102, 126, 234, 0.3);
+  border-radius: 50%;
+  border-top-color: #667eea;
+  animation: spin 1s ease-in-out infinite;
+  margin-bottom: 20px;
+}
+
+.loading-spinner p {
+  color: #6c757d;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .account-container {
+    padding: 70px 0 15px 0;
+  }
+  
+  .account-content {
+    max-width: calc(100% - 30px);
+    margin: 15px;
+  }
+  
+  .account-header {
+    padding: 30px 20px 15px;
+  }
+  
+  .account-header h1 {
+    font-size: 2rem;
+  }
+  
+  .account-header p {
+    font-size: 1rem;
+  }
+  
+  .tab {
+    padding: 15px;
+    font-size: 1rem;
+  }
+  
+  .tab-content {
+    padding: 20px;
+  }
+  
+  .user-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .avatar {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  
+  .form-group input {
+    padding: 12px 15px;
+    font-size: 16px;
+  }
+  
+  .save-button {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .account-container {
+    padding: 60px 0 10px 0;
+  }
+  
+  .account-content {
+    max-width: calc(100% - 20px);
+    margin: 10px;
+  }
+  
+  .account-header {
+    padding: 25px 15px 10px;
+  }
+  
+  .account-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .tab {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+  
+  .tab-content {
+    padding: 15px;
+  }
+  
+  .avatar {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .user-details h3 {
+    font-size: 1.3rem;
+  }
+  
+  .form-group input {
+    padding: 10px 12px;
+    font-size: 16px;
+  }
+  
+  .save-button {
+    padding: 10px;
+    font-size: 15px;
+  }
+  
+  .logout-button {
+    padding: 10px 25px;
+    font-size: 15px;
+  }
+}
+
+
+@media (hover: none) and (pointer: coarse) {
+  .save-button,
+  .logout-button,
+  .tab {
+    min-height: 44px;
+  }
+  
+  .form-group input {
+    min-height: 44px;
+  }
+} 

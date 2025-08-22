@@ -1,0 +1,63 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OSRM generated files
+osrm-server/*.osrm*
+osrm-server/*.osrm.cell_metrics
+osrm-server/*.osrm.cells
+osrm-server/*.osrm.cnbg
+osrm-server/*.osrm.cnbg_to_ebg
+osrm-server/*.osrm.datasource_names
+osrm-server/*.osrm.ebg
+osrm-server/*.osrm.ebg_nodes
+osrm-server/*.osrm.edges
+osrm-server/*.osrm.enw
+osrm-server/*.osrm.fileIndex
+osrm-server/*.osrm.geometry
+osrm-server/*.osrm.icd
+osrm-server/*.osrm.maneuver_overrides
+osrm-server/*.osrm.mldgr
+osrm-server/*.osrm.names
+osrm-server/*.osrm.nbg_nodes
+osrm-server/*.osrm.partition
+osrm-server/*.osrm.properties
+osrm-server/*.osrm.ramIndex
+osrm-server/*.osrm.restrictions
+osrm-server/*.osrm.timestamp
+osrm-server/*.osrm.tld
+osrm-server/*.osrm.tls
+osrm-server/*.osrm.turn_duration_penalties
+osrm-server/*.osrm.turn_penalties_index
+osrm-server/*.osrm.turn_weight_penalties
+
+# Docker
+.dockerignore
+
+# Firebase
+serviceAccountKey.json
+.firebaserc
+firebase.json
+
+# Environment variables
+.env

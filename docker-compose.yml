@@ -1,0 +1,11 @@
+services:
+  osrm-foot:
+    image: osrm/osrm-backend:latest
+    container_name: osrm-foot-server
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./osrm-server:/data
+    command: osrm-routed /data/greece-latest.osrm
+    restart: unless-stopped
+
